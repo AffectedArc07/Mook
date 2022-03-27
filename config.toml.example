@@ -1,0 +1,11 @@
+[data]
+# Spreadsheet ID for google API
+spreadsheetId = "https://docs.google.com/spreadsheets/your/sheet"
+# Google API key
+apiKey = "xxxxxxxxxxxxxxxxxxx"
+
+[discord]
+# Bot token
+token = "your_token_here"
+# List of admin IDs
+adminIds = [200631029675982858]
