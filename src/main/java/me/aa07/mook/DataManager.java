@@ -8,8 +8,8 @@ import com.google.api.services.sheets.v4.model.ValueRange;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.logging.Logger;
 import me.aa07.mook.config.sections.Data;
+import org.apache.logging.log4j.Logger;
 
 public class DataManager {
     private Data config;
@@ -58,7 +58,7 @@ public class DataManager {
             ValueRange initial_response = service.spreadsheets().values().get(config.spreadsheetId, initial_range).execute();
 
             if (initial_response.getValues().isEmpty()) {
-                logger.warning("No data returned from google!");
+                logger.warn("No data returned from google!");
                 return false;
             }
 
@@ -70,7 +70,7 @@ public class DataManager {
             ValueRange full_response = service.spreadsheets().values().get(config.spreadsheetId, full_range).execute();
 
             if (full_response.getValues().isEmpty()) {
-                logger.warning("No data returned from google!");
+                logger.warn("No data returned from google!");
                 // Restore backup
                 fortunes = fortunes_backup;
                 return false;
@@ -86,7 +86,7 @@ public class DataManager {
 
 
         } catch (Exception e) {
-            logger.warning("Error loading fortunes");
+            logger.error("Error loading fortunes");
             // Restore backup
             fortunes = fortunes_backup;
             return false;

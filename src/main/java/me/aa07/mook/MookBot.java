@@ -22,7 +22,7 @@ public class MookBot extends AABotCore {
         if (dataManager.refresh()) {
             getLogger().info(String.format("Loaded %s fortunes", dataManager.getFortuneCount()));
         } else {
-            getLogger().severe("Failed to load fortunes. This is a fatal error.");
+            getLogger().fatal("Failed to load fortunes. This is a fatal error.");
             System.exit(1);
         }
     }
