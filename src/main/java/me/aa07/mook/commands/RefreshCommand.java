@@ -1,13 +1,13 @@
 package me.aa07.mook.commands;
 
 import me.aa07.botcore.AABotCore;
-import me.aa07.botcore.AACommand;
+import me.aa07.botcore.slashcommand.AASlashCommand;
 import me.aa07.mook.DataManager;
 import me.aa07.mook.config.sections.Discord;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.interaction.SlashCommandInteraction;
 
-public class RefreshCommand extends AACommand {
+public class RefreshCommand extends AASlashCommand {
     private Discord config;
     private DataManager dm;
 

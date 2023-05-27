@@ -3,7 +3,8 @@ package me.aa07.mook;
 
 import java.util.ArrayList;
 import me.aa07.botcore.AABotCore;
-import me.aa07.botcore.AACommand;
+import me.aa07.botcore.messagecommand.AAMessageCommand;
+import me.aa07.botcore.slashcommand.AASlashCommand;
 import me.aa07.mook.commands.HelpCommand;
 import me.aa07.mook.commands.MookCommand;
 import me.aa07.mook.commands.RefreshCommand;
@@ -32,8 +33,8 @@ public class MookBot extends AABotCore {
     }
 
     @Override
-    public ArrayList<AACommand> getCommands() {
-        ArrayList<AACommand> commands = new ArrayList<AACommand>();
+    public ArrayList<AASlashCommand> getSlashCommands() {
+        ArrayList<AASlashCommand> commands = new ArrayList<AASlashCommand>();
         commands.add(new HelpCommand(this, dataManager));
         commands.add(new MookCommand(this, dataManager));
         commands.add(new RefreshCommand(this, config.discord, dataManager));
@@ -44,5 +45,10 @@ public class MookBot extends AABotCore {
     public ArrayList<GloballyAttachableListener> getListeners() {
         ArrayList<GloballyAttachableListener> listeners = new ArrayList<GloballyAttachableListener>();
         return listeners;
+    }
+
+    @Override
+    public ArrayList<AAMessageCommand> getMessageCommands() {
+        return new ArrayList<AAMessageCommand>();
     }
 }

@@ -1,13 +1,13 @@
 package me.aa07.mook.commands;
 
 import me.aa07.botcore.AABotCore;
-import me.aa07.botcore.AACommand;
+import me.aa07.botcore.slashcommand.AASlashCommand;
 import me.aa07.mook.DataManager;
 import me.aa07.mook.DataManager.Fortune;
 import org.javacord.api.entity.message.embed.EmbedBuilder;
 import org.javacord.api.interaction.SlashCommandInteraction;
 
-public class MookCommand extends AACommand {
+public class MookCommand extends AASlashCommand {
     private DataManager dm;
 
     public MookCommand(AABotCore bot, DataManager dm) {
